@@ -10,7 +10,7 @@ function PasswordGenerator(passLen, acceptNum = false, acceptSymbol = false) {
     // variable to hold our generated password
     let newPassword = "";
 
-    // TODO ensure at least one of each character type is chosen based off user preference.
+    // TODO #1 ensure at least one of each character type is chosen based off user preference.
 
     // create a loop that will repeat "passLen" times
     for (let i = 0; i < passLen; i++) {
@@ -60,6 +60,18 @@ function PasswordGenerator(passLen, acceptNum = false, acceptSymbol = false) {
 }
 
 // TODO Create a string shuffler function
+function stringShuffler(string) {
+    // turn the string into a array of characters
+    const arrOfString = string.split("");
+    // create a loop that runs over each character in the string and switches it with another random character in the string
+    for (let i = 0; i < arrOfString.length; i++) {
+        const randPos = randomNum(arrOfString.length)
+        const temp = arrOfString[i];
+        arrOfString[i] = arrOfString[randPos];
+        arrOfString[randPos] = temp;
+    }
+    return arrOfString.join("");
+}
 
 // generate a random number up to 255
 function randomNum(maxNum) {
@@ -83,6 +95,10 @@ function randomNum(maxNum) {
         maxNumTester += iterator;
     }
 }
+
+const test = PasswordGenerator(12, true, true);
+console.log(test);
+console.log(stringShuffler(test));
 
 console.log(PasswordGenerator(12, true, true)) // returns a value with 12 chars 
 console.log(PasswordGenerator(12, true, false)) // returns a value with 12 chars no symbols
