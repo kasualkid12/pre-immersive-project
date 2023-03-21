@@ -1,5 +1,5 @@
 // function to generate a password for the user
-function PasswordGenerator(passLen, acceptNum = false, acceptSymbol = false) {
+function passwordGenerator(passLen, acceptNum = false, acceptSymbol = false) {
     // throws an error if the password length is too short or too long
     if (passLen < 8 || passLen > 100) { throw new Error("Password must be between 8 and 100 characters.") }
 
@@ -56,10 +56,9 @@ function PasswordGenerator(passLen, acceptNum = false, acceptSymbol = false) {
             }
         }
     }
-    return newPassword;
+    document.getElementById('passText').textContent = stringShuffler(newPassword);
 }
 
-// TODO Create a string shuffler function
 function stringShuffler(string) {
     // turn the string into a array of characters
     const arrOfString = string.split("");
@@ -99,19 +98,3 @@ function randomNum(maxNum) {
     }
 }
 
-const test = PasswordGenerator(12, true, true);
-console.log(test);
-console.log(stringShuffler(test));
-
-console.log(PasswordGenerator(12, true, true)) // returns a value with 12 chars 
-console.log(PasswordGenerator(12, true, false)) // returns a value with 12 chars no symbols
-console.log(PasswordGenerator(12, false, true)) // returns a value with 12 chars no numbers
-console.log(PasswordGenerator(12, false, false)) // returns a value with 12 chars no numbers no symbols
-console.log(PasswordGenerator(25, true, true)) // returns a value with 25 chars
-console.log(PasswordGenerator(9, false, true)) // returns a value with 9 chars no numbers
-console.log(PasswordGenerator(17, true, true)) // returns a value with 17 chars
-console.log(PasswordGenerator(23, false, false)) // returns a value with 23 chars no numbers no symbols
-console.log(PasswordGenerator(20, true, false)) // returns a value with 20 chars no symbols
-console.log(PasswordGenerator(15, true, false)) // returns a value with 15 chars no symbols
-console.log(PasswordGenerator(10, false, true)) // returns a value with 10 chars no numbers
-console.log(PasswordGenerator(6, true, true)) // returns error

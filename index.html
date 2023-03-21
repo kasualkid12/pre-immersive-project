@@ -5,9 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Password Manager</title>
 </head>
 <body>
-    
+    <div class="passGen">
+        <div id="passText">
+            <script>passwordGenerator(12, true, true);</script>
+        </div>
+        <button type="button" onclick="passwordGenerator(12, true, true);">New Password</button>
+    </div>
 </body>
 </html>
