@@ -63,13 +63,16 @@ function PasswordGenerator(passLen, acceptNum = false, acceptSymbol = false) {
 function stringShuffler(string) {
     // turn the string into a array of characters
     const arrOfString = string.split("");
-    // create a loop that runs over each character in the string and switches it with another random character in the string
+
+    // loops over the array and replaces the current index character with a character from another random index
     for (let i = 0; i < arrOfString.length; i++) {
         const randPos = randomNum(arrOfString.length)
         const temp = arrOfString[i];
         arrOfString[i] = arrOfString[randPos];
         arrOfString[randPos] = temp;
     }
+
+    // returns and joins the array back into a string
     return arrOfString.join("");
 }
 
