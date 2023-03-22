@@ -44,7 +44,7 @@ function passwordGenerator(passLen, acceptNum = false, acceptSymbol = false) {
             } else if (randomChar === 1) {
                 newPassword += alphaChars.toUpperCase().charAt(randomNum(26));
             } else if (randomChar === 2) {
-                newPassword += symbolChars.charAt(randomNum(10));
+                newPassword += symbolChars.charAt(randomNum(8));
             }
         // if neither "acceptNum" or "acceptSymbol" are true, randomly select a string not including symbols or numbers to randomly take a character from
         } else {

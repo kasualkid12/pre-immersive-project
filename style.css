@@ -1,4 +1,18 @@
+html {
+    font-family: sans-serif;
+}
+
 body {
     background: black;
     color: white
+}
+
+.passGen {
+    text-align: center;
+    padding: 10px;
+    border: 2px solid rgb(6, 6, 168);
+}
+
+#passText {
+    padding: 5px;
 }

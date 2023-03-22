@@ -11,9 +11,21 @@
 <body>
     <div class="passGen">
         <div id="passText">
-            <script>passwordGenerator(12, true, true);</script>
+            <script>passwordGenerator(12, document.getElementById('numCheck').checked, document.getElementById('symbolCheck').checked);</script>
         </div>
-        <button type="button" onclick="passwordGenerator(12, true, true);">New Password</button>
+
+        <button type="button" onclick="passwordGenerator(12, document.getElementById('numCheck').checked, document.getElementById('symbolCheck').checked);">New Password</button>
+        
+        <div>
+            <input type="checkbox" id="numCheck">
+            <label for="numCheck">Add numbers (123)</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="symbolCheck">
+            <label for="symbolCheck">Add symbols (!#$)</label>
+        </div>
+
     </div>
 </body>
 </html>
