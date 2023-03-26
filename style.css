@@ -8,6 +8,8 @@ body {
 }
 
 .passGen {
+    width: 25%;
+    margin: auto;
     text-align: center;
     padding: 10px;
     border: 2px solid rgb(6, 6, 168);
@@ -15,4 +17,8 @@ body {
 
 #passText {
     padding: 5px;
+}
+
+#passLength {
+    width: 2rem;
 }

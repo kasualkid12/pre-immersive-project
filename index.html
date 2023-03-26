@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="app.js"></script>
+    <script defer src="app.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Password Manager</title>
 </head>
@@ -14,8 +14,17 @@
             <script>passwordGenerator(12, document.getElementById('numCheck').checked, document.getElementById('symbolCheck').checked);</script>
         </div>
 
-        <button type="button" onclick="passwordGenerator(12, document.getElementById('numCheck').checked, document.getElementById('symbolCheck').checked);">New Password</button>
-        
+        <button type="button" onclick="passwordGenerator(document.getElementById('passLength').value, document.getElementById('numCheck').checked, document.getElementById('symbolCheck').checked);">New Password</button>
+
+        <div>
+        <label for="passLength">Password Length (8-99)</label>
+        </div>
+
+        <div>
+            <input type="range" id="passLengthRange" value="12" min="8" max="99">
+            <input type="number" id="passLength" value="12" min="8" max="99">
+        </div>
+
         <div>
             <input type="checkbox" id="numCheck">
             <label for="numCheck">Add numbers (123)</label>

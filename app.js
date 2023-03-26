@@ -1,7 +1,7 @@
 // function to generate a password for the user
 function passwordGenerator(passLen, acceptNum = false, acceptSymbol = false) {
     // throws an error if the password length is too short or too long
-    if (passLen < 8 || passLen > 100) { throw new Error("Password must be between 8 and 100 characters.") }
+    if (passLen < 8 || passLen >= 100) { throw new Error("Password must be between 8 and 100 characters.") }
 
     // variables to hold our useable characters for our password
     const alphaChars = "abcdefghijklmnopqrstuvwxyz";
@@ -98,3 +98,12 @@ function randomNum(maxNum) {
     }
 }
 
+
+
+document.getElementById("passLength").addEventListener('input', updateVal);
+document.getElementById("passLengthRange").addEventListener('input', updateVal);
+
+function updateVal(e) {
+    let sibling = e.target.previousElementSibling || e.target.nextElementSibling;
+    sibling.value = e.target.value;
+}
