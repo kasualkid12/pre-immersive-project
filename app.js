@@ -104,6 +104,8 @@ document.getElementById("passLength").addEventListener('input', updateVal);
 document.getElementById("passLengthRange").addEventListener('input', updateVal);
 
 function updateVal(e) {
+    console.log(e)
+    console.log(e.previousElementSibling)
     let sibling = e.target.previousElementSibling || e.target.nextElementSibling;
     sibling.value = e.target.value;
 }
